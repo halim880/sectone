@@ -18,12 +18,13 @@ SECTCONE is a University management web aplication. It has the following feature
 This is an open source project. feel free to install and use it.
 
 ## Installation Process
-If you want to test this project on your local server, you have to have git, composer and Xampp/Mampp pre-installed in your computer.
+If you want to test this project on your local server, you have to have git, composer and Xampp/Mampp pre-installed in your computer. run these comands.
+       -git clone 
 
 
 ## Technology used to in this project
-    -HTML
-    -CSS
-    -Materialize css
-    -JavaScript
-    -Laravel 7
+- HTML
+- CSS
+- Materialize css
+- JavaScript
+- Laravel 7
