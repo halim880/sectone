@@ -19,7 +19,17 @@ This is an open source project. feel free to install and use it.
 
 ## Installation Process
 If you want to test this project on your local server, you have to have git, composer and Xampp/Mampp pre-installed in your computer. run these comands.
-       -git clone 
+
+       -git clone https://github.com/halim880/sectone.git,
+       -cd sectcone
+       -composer install
+       -php artisan db:seed
+       -php artisan serve.
+If everything is done perfectly the application will run in your local server.
+To get access to the admin panel you should use 
+    email: admin@gmail.com
+    password: admin;
+
 
 
 ## Technology used to in this project
