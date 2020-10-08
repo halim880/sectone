@@ -17,9 +17,9 @@ class UsersTableSeeder extends Seeder
         User::truncate();
         $role = Role::select('id')->where('name', 'admin')->get()->first();
         $admin = User::create([
-                'name'=> 'Abdul Halim',
-                'email'=> 'a.halimics@gmail.com',
-                'password'=> Hash::make('nilakash'),
+                'name'=> 'Admin',
+                'email'=> 'admin@gmail.com',
+                'password'=> Hash::make('password'),
             ]);
         $admin->roles()->attach($role);
     }

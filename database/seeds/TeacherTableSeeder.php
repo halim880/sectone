@@ -25,27 +25,27 @@ class TeacherTableSeeder extends Seeder
 
         $teachers = [
             [
-                'name'=>'MD. Abdur Rouf',
-                'email'=>'rouf@gmail.com',
-                'password' => Hash::make('nilakash'),
+                'name'=>'Teacher',
+                'email'=>'teacher@gmail.com',
+                'password' => Hash::make('password'),
                 'title'=>'Profesor',
-                'department_id'=>'1',
+                'department_id'=>'102',
                 'status'=> 'parmanent',
             ],
             [
                 'name'=>'Mousumi Aktar',
                 'email'=>'mousumi@gmail.com',
-                'password' => Hash::make('nilakash'),
+                'password' => Hash::make('password'),
                 'title'=>'Assistant Profesor',
-                'department_id'=>'1',
+                'department_id'=>'101',
                 'status'=> 'parmanent',
             ],
             [
                 'name'=>'Proma heig',
                 'email'=>'proma@gmail.com',
-                'password' => Hash::make('nilakash'),
+                'password' => Hash::make('password'),
                 'title'=>'Lecturer',
-                'department_id'=>'1',
+                'department_id'=>'101',
                 'status'=> 'Guest',
             ],
         ];
@@ -59,12 +59,12 @@ class TeacherTableSeeder extends Seeder
                 'email' => $t['email'],
                 'password' => $t['password'],
             ]);
+
             $user->roles()->attach($role);
             $teacher = factory(Teacher::class)->make();
-            $teacher->user_id = $user->id;
             $teacher->title = $t['title'];
             $teacher->department_id = $t['department_id'];
-            $teacher->save();
+            $user->teacher()->save($teacher);
             $teacher->courses()->sync($courses);
         }
     }

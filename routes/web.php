@@ -22,7 +22,6 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware(IsAdmin::
     Route::get('/teacher/edit/{teacher}', 'TeachersController@edit');
     Route::get('/teacher/create', 'TeachersController@create');
     Route::resource('/teacher', 'TeachersController');
-
 /******************************************* Dashboard Routes **********************************/
     Route::get('/dashboard', 'DashboardController@dashboard');
     Route::get('/settings', 'DashboardController@settings');

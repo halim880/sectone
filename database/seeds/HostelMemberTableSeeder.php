@@ -27,7 +27,7 @@ class HostelMemberTableSeeder extends Seeder
         foreach ($members as $member) {
             Member::create([
                 'student_id' => $member['student_id'],
-                'hostel' => $member['hostel'],
+                'hostel_id' => $member['hostel'],
                 'room_no' => $member['room_no'],
                 'sit_no' => $member['sit_no'],
                 'admission_date' => $member['admission_date'],

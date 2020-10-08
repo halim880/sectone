@@ -7,7 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Teacher::class, function (Faker $faker) {
     return [
-        'image'=>$faker->file('C:\Users\Halim\Desktop\image\Hijab', public_path('image/teacher'), false),
+        'image'=>$faker->file(public_path('sectcone/image/teachers'), public_path('image/teacher'), false),
         'department_id'=> 101,
         'teacher_type' => 'permanent',
     ];

@@ -7,34 +7,33 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## About SECTCONE
+## About SUET
 
-SECTCONE is a University management web aplication. It has the following features:
-- Student management system.
-- Library management system.
+SUET is a University management web aplication. It has the following features:
+- student management system.
+- library management system.
 - Hostel management system.
-- Andriod app based (using API) attendance system.
+- Andriod app based attendance system.
+- Payment system.
 
 This is an open source project. feel free to install and use it.
 
 ## Installation Process
-If you want to test this project on your local server, you have to have git, composer and Xampp/Mampp pre-installed in your computer. run these comands.
-
-       -git clone https://github.com/halim880/sectone.git,
-       -cd sectcone
-       -composer install
-       -php artisan db:seed
-       -php artisan serve.
-If everything is done perfectly the application will run in your local server.
-To get access to the admin panel you should use 
-    email: admin@gmail.com
-    password: admin;
+If you want to test this project on your local server, you have to have git, composer and Xampp/Mampp pre-installed in your computer.
 
 
+## Laravel Sponsors
 
-## Technology used to in this project
-- HTML
-- CSS
-- Materialize css
-- JavaScript
-- Laravel 7
+
+## Contributing
+
+If you want to contribute to this project, you are most welcomed.
+Here is the process to make contribution to this project.
+
+## Code of Conduct
+
+
+## License
+
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# sectone
