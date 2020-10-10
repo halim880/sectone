@@ -22,7 +22,7 @@
         <p style="margin-left: 20px;">Attendane</p>
     </a>
     <a href="{{URL::to('student/library/books')}}">
-        <i class="material-icons prefix">house</i> 
+        <i class="material-icons prefix">house</i>  
         <p style="margin-left: 20px;">Library</p>
     </a> 
     <a href="{{URL::to('admin/students')}}">
@@ -33,7 +33,7 @@
         <i class="material-icons">school</i> 
         <p style="margin-left: 20px;">Hostel</p>
     </a> 
-    <a href="{{URL::to('home')}}">
+    <a href="{{route('page.home')}}">
         <i class="material-icons">school</i> 
         <p style="margin-left: 20px;">Web</p>
     </a> 

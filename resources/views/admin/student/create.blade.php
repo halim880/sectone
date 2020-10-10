@@ -1,53 +1,115 @@
-@extends('layouts.admin')
+@extends('layouts.admin.admin')
+
 
 @section('content')
-<div id="body">
-    <form action="{{url('admin/student/store')}}" id="student_form" method="POST" enctype="multipart/form-data">
-        @csrf
-     <div class="member_form">
-             <div class="personal_info">
-                 <div class="heading">
-                    <h1>Personal Information</h1>
-                 </div>
-                 <div class="body">
-                    <div class="name">
-                        <label for="">Name: </label>
-                        <input type="text" name="name" placeholder="eg. Abdul halim">
+<div class="container card" style="padding: 27px">
+    <div class="row">
+        <h4>Add New Student</h4>
+    </div>
+    <div class="row">
+        <form action="{{route("admin.student.store")}}" method="post" enctype="multipart/form-data">
+            @csrf
+            @method('POST')
+            <div class="row">
+                <div class="col m6">
+                    <div class="input-field">
+                        <input type="text" name="name" id="name">
+                        <label for="name">Name </label>
                     </div>
-                    <div class="email">
-                        <label for="">Email: </label>
-                        <input type="email" name="email" placeholder="eg. a.halimics@gmail.com">
+                </div>
+                <div class="col m6">
+                    <div class="input-field">
+                        <input type="text" name="email" id="email">
+                        <label for="email">Email </label>
                     </div>
-                    <div class="image">
-                        <label for="">Image: </label>
-                        <input type="file" name="image" placeholder="eg. a.halimics@gmail.com">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col m6">
+                    <div class="input-field">
+                        <select name="department" id="department">
+                            <option value="101" selected>Computer Science & Engineering</option>
+                            <option value="102" >Electrical & Electronics Engineering</option>
+                            <option value="103">Civil Engineering</option>
+                        </select>
+                        <label for="department">Department</label>
                     </div>
-                    <div class="registration">
-                        <label for="">Registration : </label>
-                        <input type="text" name="registration" placeholder="eg. 2016331509">
+                </div>
+                <div class="col m6">
+                    <div class="input-field">
+                        <input type="text" name="registration" id="registration">
+                        <label for="registration">Registration </label>
                     </div>
-                    <div class="department">
-                        <label for="">Department : </label>
-                        <input type="text" name="department" placeholder="Department">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col m6">
+                    <div class="input-field">
+                        <select name="semester" id="semester">
+                            @foreach ($semesters as $semester)
+                                <option value="{{$semester->id}}">{{$semester->name}}</option>
+                            @endforeach
+                        </select>
+                        <label for="semester">Semester </label>
                     </div>
-                    
-                    <div class="session">
-                        <label for="">Session</label>
-                        <input type="text" name="session" placeholder="2016-2017">
+                </div>
+                <div class="col m6">
+                    <div class="input-field">
+                        <input type="text" name="session" id="session">
+                        <label for="session">Session </label>
                     </div>
-                    <div class="semester">
-                        <label for="">Semister : </label>
-                        <input type="text" name="semester" placeholder="eg. 6">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col m6">
+                    <div class="input-field">
+                        <input type="text" name="father_name" id="father_name">
+                        <label for="father_name">Father's name</label>
                     </div>
-                 </div>
-                <div class="nextBtn"><button onclick="form_submit('student_form')">Submit</button></div>
-             </div>
-     </div>
-    </form>
+                </div>
+                <div class="col m6">
+                    <div class="input-field">
+                        <input type="text"  name="mother_name" id="mother_name">
+                        <label for="mother_name">Mother's name</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col m6">
+                    <div class="input-field">
+                        <input type="text" name="phone" id="phone">
+                        <label for="phone">Phone</label>
+                    </div>
+                </div>
+                <div class="col m6">
+                    <div class="input-field">
+                        <p>Image</p>
+                        <input type="file"  name="image" id="image">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col m12">
+                    <div class="input-field">
+                        <input type="text" name="current_address" id="current_address">
+                        <label for="current_address">Current Address</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col m12">
+                    <div class="input-field">
+                        <input type="text" name="permanent_address" id="permanent_address">
+                        <label for="permanent_address">Permanent Address</label>
+                    </div>
+                </div>
+            </div>
+            <div class="card-action center-align">
+                <button class="btn orange">Save</button>
+            </div>
+        </form>
+    </div>
 </div>
-<script>
-    document.getElementById('student_form').addEventListener('submit', (e)=>{
-        e.preventDefault();
-    });
-</script>
 @endsection
+

@@ -27,7 +27,7 @@ class AttendanceController extends Controller
 
     public function store(Request $data){
         $date =  random_int(10,30).'/'.random_int(10,12).'/'.'20';
-        foreach ($data->students as $student) {
+        foreach ($data->rules as $student) {
             $attendance = new Attendance;
             $attendance->department_id = $data->department_id;
             $attendance->course_id = $data->course_id;;
@@ -40,9 +40,9 @@ class AttendanceController extends Controller
                     $attendance->status = false;
                 }
             }
-            $attendance->save();
+            // $attendance->save();
         }
-        return response()->json('Saved');
+        return response()->json($data->students);
     }
 
     public function review(Request $data){

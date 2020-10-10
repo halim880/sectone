@@ -32,23 +32,5 @@ class SemestersTableSeeder extends Seeder
             ]);
             $id++;
         }
-        $id = 201;
-        foreach ($semesters as $semester) {
-            Semester::create([
-                'id'=> $id,
-                'name'=> $semester['name'],
-                'short_form'=> $semester['short_form'],
-            ]);
-            $id++;
-        }
-        $id = 301;
-        foreach ($semesters as $semester) {
-            Semester::create([
-                'id'=> $id,
-                'name'=> $semester['name'],
-                'short_form'=> $semester['short_form'],
-            ]);
-            $id++;
-        }
     }
 }

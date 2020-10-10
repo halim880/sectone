@@ -1,39 +1,97 @@
-@extends('layouts.admin')
+@extends('layouts.admin.admin')
+
 
 @section('content')
-<div id="body">
-    <form action="{{url('admin/teacher')}}" method="POST" enctype="multipart/form-data">
-        @csrf
-     <div class="member_form">
-             <div class="personal_info">
-                 <div class="heading">
-                    <h1>Personal Information</h1>
-                 </div>
-                 <div class="body">
-                    <div class="user_id" style="display:none;">
-                        <input type="text" name="user_id"  >
+<div class="container card" style="padding: 27px">
+    <div class="row">
+        <h4>Add New Teacher</h4>
+    </div>
+    <div class="row">
+        <form action="{{route("admin.student.store")}}" method="post" enctype="multipart/form-data">
+            @csrf
+            @method('POST')
+            <div class="row">
+                <div class="col m6">
+                    <div class="input-field">
+                        <input type="text" name="name" id="name">
+                        <label for="name">Name </label>
                     </div>
-                    <div class="full_name">
-                        <label for="">Name: </label>
-                        <input type="text" name="name">
+                </div>
+                <div class="col m6">
+                    <div class="input-field">
+                        <input type="text" name="email" id="email">
+                        <label for="email">Email </label>
                     </div>
-                    <div class="phone_number">
-                        <label for="">Phone Number : </label>
-                        <input type="text" name="phone" placeholder="eg. 01743 920880">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col m6">
+                    <div class="input-field">
+                        <select name="department" id="department">
+                            <option value="101" selected>Computer Science & Engineering</option>
+                            <option value="102" >Electrical & Electronics Engineering</option>
+                            <option value="103">Civil Engineering</option>
+                        </select>
+                        <label for="department">Department</label>
                     </div>
-
-                    <div class="job">
-                        <label for="">Job : </label>
-                        <input type="text" name="job" placeholder="eg. Banker">
+                </div>
+                <div class="col m6">
+                    <div class="input-field">
+                        <input type="text" name="registration" id="registration">
+                        <label for="registration">Registration </label>
                     </div>
-                    <div class="location">
-                        <label for="">Location : </label>
-                        <input type="text" name="location" placeholder="eg. Sylhet">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col m6">
+                    <div class="input-field">
+                        <input type="text" name="father_name" id="father_name">
+                        <label for="father_name">Father's name</label>
                     </div>
-                 </div>
-                <div class="nextBtn"><button>Submit</button></div>
-             </div>
-     </div>
-    </form>
+                </div>
+                <div class="col m6">
+                    <div class="input-field">
+                        <input type="text"  name="mother_name" id="mother_name">
+                        <label for="mother_name">Mother's name</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col m6">
+                    <div class="input-field">
+                        <input type="text" name="phone" id="phone">
+                        <label for="phone">Phone</label>
+                    </div>
+                </div>
+                <div class="col m6">
+                    <div class="input-field">
+                        <p>Image</p>
+                        <input type="file"  name="image" id="image">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col m12">
+                    <div class="input-field">
+                        <input type="text" name="current_address" id="current_address">
+                        <label for="current_address">Current Address</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col m12">
+                    <div class="input-field">
+                        <input type="text" name="permanent_address" id="permanent_address">
+                        <label for="permanent_address">Permanent Address</label>
+                    </div>
+                </div>
+            </div>
+            <div class="card-action center-align">
+                <button class="btn orange">Save</button>
+            </div>
+        </form>
+    </div>
 </div>
 @endsection
+

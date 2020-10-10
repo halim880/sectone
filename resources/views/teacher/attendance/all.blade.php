@@ -134,7 +134,7 @@
             });
             let b = document.createElement('button');
             b.innerHTML = 'Submit';
-            b.setAttribute('onclick', 'submit()');
+            // b.setAttribute('onclick', 'submit()');
             subbtn.appendChild(b);
 
             document.getElementById('attendanceTableWrapper').classList.remove('hide');

@@ -100,12 +100,12 @@
                 <div class="col s12 m4 l3">
                     <div class="card center-align">
                         <div class="card-title teal lighten-3">
-                            <p>Proctor</p>
+                            <p>Warden</p>
                         </div>
                         <div class="proctor-card">
                             
-                            <img src="{{asset('image/4331.jpeg')}}" alt="">
-                            <p class="name">Shamsul Alom</p>
+                            <img src="{{asset('image/4557.jpg')}}" alt="">
+                            <p class="name">Emma Watson</p>
                             <p class="title">Lecturer</p>
                             <p class="title">Computer Science & Engineering</p>
                         </div>
@@ -134,7 +134,7 @@
                         <div class="proctor-card">
                             
                             <img src="{{asset('image/4331.jpeg')}}" alt="">
-                            <p class="name">Shahed Iqbal</p>
+                            <p class="name">Emma Watson</p>
                             <p class="title">Dept. Head</p>
                             <p class="title">Electrical & Electronics Engineering</p>
                         </div>

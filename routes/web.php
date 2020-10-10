@@ -9,25 +9,38 @@ Auth::routes();
 
 Route::get('user', 'HomeController@user_info');
 
-/******************************************* Home Routes **********************************/
+/******************************************* Web Routes **********************************/
 Route::get('/', 'HomeController@index');
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('pages/events', 'HomeController@events');
-Route::get('pages/advisors', 'HomeController@advisors');
-Route::get('pages/members', 'HomeController@members');
+Route::prefix('web')->name('page.')->group(function (){
+    Route::get('/home', 'PagesController@home')->name('home');
+    Route::get('pages/events', 'PagesController@events')->name('events');
+    Route::get('pages/amission', 'PagesController@admission')->name('admission');
+    Route::get('pages/department', 'PagesController@department')->name('department');
+    Route::get('pages/notice', 'PagesController@notice')->name('notice');
+    Route::get('pages/blog', 'PagesController@blog')->name('blog');
+});
 
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware(IsAdmin::class)->group(function (){
 /******************************************* Teachers Routes **********************************/
     Route::get('/teacher/edit/{teacher}', 'TeachersController@edit');
     Route::get('/teacher/create', 'TeachersController@create');
     Route::resource('/teacher', 'TeachersController');
+/******************************************* Students Routes **********************************/
+    Route::get('/student/show/{student}', 'StudentsController@show')->name('student.show');
+    Route::get('/student/edit/{student}', 'StudentsController@edit')->name('student.edit');
+    Route::post('/student/update', 'StudentsController@update')->name('student.update');
+    Route::post('/student/store', 'StudentsController@store')->name('student.store');
+    Route::get('/student/create', 'StudentsController@show')->name('student.create');
+    Route::delete('/student/create', 'StudentsController@destroy')->name('student.destroy');
+    Route::get('/student/create', 'StudentsController@create');
+    Route::resource('/student', 'StudentsController');
 /******************************************* Dashboard Routes **********************************/
     Route::get('/dashboard', 'DashboardController@dashboard');
     Route::get('/settings', 'DashboardController@settings');
     Route::get('/hostel', 'DashboardController@hostel');
     Route::get('/library', 'DashboardController@library');
     Route::get('/teachers', 'DashboardController@teachers');
+    Route::get('/students', 'DashboardController@students')->name('students');
     Route::get('/hostel/member/{member}', 'DashboardController@member_show');
 });
 

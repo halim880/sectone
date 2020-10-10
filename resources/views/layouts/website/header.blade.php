@@ -2,15 +2,15 @@
     {{-- Navigation bar --}}
     <nav class="teal">
         <div class="nav-wrapper ">
-          <a href="#!" class="brand-logo">Logo</a>
+          <a href="#!" class="brand-logo">Sectcone</a>
           <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
-            <li><a href="">Home</a></li>
-            <li><a href="">Notice</a></li>
-            <li><a href="">Departments</a></li>
-            <li><a href="">Admission</a></li>
-            <li><a href="">Blog</a></li>
-            <li><a href="">Events</a></li>
+            <li><a href="{{route('page.home')}}">Home</a></li>
+            <li><a href="{{route('page.notice')}}">Notice</a></li>
+            <li><a href="{{route('page.department')}}">Departments</a></li>
+            <li><a href="{{route('page.admission')}}">Admission</a></li>
+            <li><a href="{{route('page.blog')}}">Blog</a></li>
+            <li><a href="{{route('page.events')}}">Events</a></li>
             @auth
                 @if (Auth::user()->hasRole('teacher'))
                     <li><a href="{{url('teacher/home')}}" class="floating-button">

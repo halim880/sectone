@@ -1,7 +1,7 @@
 <header>
     <nav class="white">
         <div class="nav-wrapper">
-            <a href="#!" class="brand-logo teal-text">Logo</a>
+            <a href="#!" class="brand-logo teal-text">Sectcone</a>
             <ul class="right hide-on-med-and-down">
                 <li>
                     <a href="{{url('home')}}">
