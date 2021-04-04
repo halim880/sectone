@@ -7,6 +7,7 @@ use App\Models\Department;
 use App\Models\Semester;
 use App\Models\Hostel\Member as H_Member;
 use App\Models\Academic\Course;
+use App\Models\Academic\DropCourse;
 use App\Models\Library\Member as L_Member;
 use App\Models\Library\IssueBook as Book;
 use Illuminate\Database\Eloquent\Model;
@@ -46,4 +47,21 @@ class Student extends Model
     public function courses(){
         return $this->belongsToMany(Course::class);
     }
+
+    public function current_courses(){
+        return Course::where([
+            'semester_id'=> $this->semester_id,
+            'department_id'=> $this->department_id,
+        ])->get();
+    }
+
+
+    public function drop_courses(){
+        return $this->belongsToMany(Course::class, 'drop_courses', 'student_id', 'course_id');
+    }
+
+    public function getSemesterNameAttribute(){
+        return $this->semester->name;
+    }
+
 }

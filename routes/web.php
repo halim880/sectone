@@ -69,10 +69,13 @@ Route::namespace('Student')->prefix('student')->middleware(IsStudent::class)->gr
      Route::get('/attendance', 'StudentsController@attendance');
      Route::get('/attendance/all/{course}', 'StudentsController@all_attendance');
      Route::get('/attendance/show/', 'StudentsController@show');
-     Route::get('/form/create', 'StudentsController@create_form');
      Route::get('/form/submit', 'StudentsController@form_submit');
      Route::get('/form/check', 'StudentsController@check');
      Route::get('/library/books', 'StudentsController@books');
+     
+     
+     Route::get('/form/create', 'RegistrationFormController@create_form');
+     Route::post('/form/submit', 'RegistrationFormController@submit');
 });
 
 

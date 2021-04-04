@@ -26,14 +26,13 @@
     }
 </style>
     <div class="courses_list">
-        @foreach (Auth::user()->student->courses as $course)
+        @foreach ($courses as $course)
             <a href="{{url('student/attendance/all', $course)}}">
                 <div class="course">
-                    <h4>{{$course->code}}</h4>
+                    <h4>{{$course->course_code}}</h4>
                     <p>{{$course->title}}</p>
                 </div>
             </a>
-            {{-- onclick="show_attendance(this, {{$course}})" --}}
         @endforeach
             <style>
                 .attendanceTableWrapper{

@@ -19,12 +19,10 @@ class StudentsController extends Controller
     }
 
     public function attendance(){
-        return view('student.attendance');
+        $courses = Auth::user()->student->current_courses();
+        return view('student.attendance', compact('courses'));
     }
-    public function create_form(){
-        $courses = Course::where([['id', '>', '1601'], ['id', '<', '1610']])->get();
-        return view('student.create_form', compact('courses'));
-    }
+    
 
     public function show(Request $data){
         // $attendance = Course::find($data->id)->attendances;

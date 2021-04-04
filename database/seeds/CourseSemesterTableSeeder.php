@@ -13,7 +13,7 @@ class CourseSemesterTableSeeder extends Seeder
         \DB::table('course_semester')->truncate();
         \DB::table('course_semester')->insert([
             'course_id' => '1101',
-            'semester_id'=> '6'
+            'semester_id'=> '106'
         ]);
     }
 }

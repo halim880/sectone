@@ -7,99 +7,98 @@ class CoursesTableSeeder extends Seeder
 {
     public function run()
     {
-        \DB::table('course_semester')->truncate();
         Course::truncate();
         $semesters = [
                 [
                     'semester'=>1,
                     'courses'=> [
-                        ['id'=>1101, 'title'=>'Introduction to Computer Science', 'code'=>'CSE 101', 'credit'=>'3.00'],
-                        ['id'=>1102, 'title'=>'Introduction to Computer Science(Sessional)', 'code'=>'CSE 102', 'credit'=>'1.50'],
-                        ['id'=>1103, 'title'=>'Physics', 'code'=> 'PHY 101', 'credit'=>'3.00'],
-                        ['id'=>1104, 'title'=>'Physics (Sessional)', 'code'=> 'PHY 102', 'credit'=>'3.00'],
-                        ['id'=>1105, 'title'=>'Physics (Sessional)', 'code'=> 'PHY 102', 'credit'=>'1.50'],
-                        ['id'=>1106, 'title'=>'Mechanical Engineering', 'code'=> 'ME 101', 'credit'=>'3.00'],
-                        ['id'=>1107, 'title'=>'Mechanical Engineering (Sessional)', 'code'=> 'ME 102', 'credit'=>'1.50'],
+                        ['title'=>'Introduction to Computer Science', 'course_code'=>'CSE 101', 'credit'=>'3.00','department_id'=> '101', 'semester_id'=>'101'],
+                        ['title'=>'Introduction to Computer Science(Sessional)', 'course_code'=>'CSE 102', 'credit'=>'1.50','department_id'=> '101', 'semester_id'=>'101'],
+                        ['title'=>'Physics', 'course_code'=> 'PHY 101', 'credit'=>'3.00','department_id'=> '101', 'semester_id'=>'101'],
+                        ['title'=>'Physics (Sessional)', 'course_code'=> 'PHY 102', 'credit'=>'3.00','department_id'=> '101', 'semester_id'=>'101'],
+                        ['title'=>'Physics (Sessional)', 'course_code'=> 'PHY 102', 'credit'=>'1.50','department_id'=> '101', 'semester_id'=>'101'],
+                        ['title'=>'Mechanical Engineering', 'course_code'=> 'ME 101', 'credit'=>'3.00','department_id'=> '101', 'semester_id'=>'101'],
+                        ['title'=>'Mechanical Engineering (Sessional)', 'course_code'=> 'ME 102', 'credit'=>'1.50','department_id'=> '101', 'semester_id'=>'101'],
                     ]
                 ],
                 [
                     'semester'=>2,
                     'courses'=> [
-                        ['id'=>1201, 'title'=>'Programming with c', 'code'=>'CSE 201', 'credit'=>'3.00'],
-                        ['id'=>1202, 'title'=>'Programming with c', 'code'=>'CSE 202', 'credit'=>'1.50'],
-                        ['id'=>1203, 'title'=>'Chemistry', 'code'=> 'CHY 201', 'credit'=>'3.00'],
-                        ['id'=>1204, 'title'=>'Chemistry (Sessional)', 'code'=> 'CHY 202', 'credit'=>'1.50'],
-                        ['id'=>1205, 'title'=>'Physics (Sessional)', 'code'=> 'PHY 102', 'credit'=>'3.00'],
-                        ['id'=>1206, 'title'=>'Mechanical Drawing', 'code'=> 'ME 101', 'credit'=>'1.50']
+                        ['title'=>'Programming with c', 'course_code'=>'CSE 201', 'credit'=>'3.00','department_id'=> '101', 'semester_id'=>'102'],
+                        ['title'=>'Programming with c', 'course_code'=>'CSE 202', 'credit'=>'1.50','department_id'=> '101', 'semester_id'=>'102'],
+                        ['title'=>'Chemistry', 'course_code'=> 'CHY 201', 'credit'=>'3.00','department_id'=> '101', 'semester_id'=>'102'],
+                        ['title'=>'Chemistry (Sessional)', 'course_code'=> 'CHY 202', 'credit'=>'1.50','department_id'=> '101', 'semester_id'=>'102'],
+                        ['title'=>'Physics (Sessional)', 'course_code'=> 'PHY 102', 'credit'=>'3.00','department_id'=> '101', 'semester_id'=>'102'],
+                        ['title'=>'Mechanical Drawing', 'course_code'=> 'ME 101', 'credit'=>'1.50','department_id'=> '101', 'semester_id'=>'102']
                     ]
                 ],
                 [
                     'semester'=>3,
                     'courses'=> [
-                        ['id'=>1301, 'title'=>'Programming with c', 'code'=>'CSE 201', 'credit'=>'3.00'],
-                        ['id'=>1302, 'title'=>'Programming with c', 'code'=>'CSE 202', 'credit'=>'1.50'],
-                        ['id'=>1303, 'title'=>'Chemistry', 'code'=> 'CHY 201', 'credit'=>'3.00'],
-                        ['id'=>1304, 'title'=>'Chemistry (Sessional)', 'code'=> 'CHY 202', 'credit'=>'1.50'],
-                        ['id'=>1305, 'title'=>'Physics (Sessional)', 'code'=> 'PHY 102', 'credit'=>'3.00'],
-                        ['id'=>1306, 'title'=>'Mechanical Drawing', 'code'=> 'ME 101', 'credit'=>'1.50']
+                        ['title'=>'Programming with c', 'course_code'=>'CSE 201', 'credit'=>'3.00','department_id'=> '101', 'semester_id'=>'103'],
+                        ['title'=>'Programming with c', 'course_code'=>'CSE 202', 'credit'=>'1.50','department_id'=> '101', 'semester_id'=>'103'],
+                        ['title'=>'Chemistry', 'course_code'=> 'CHY 201', 'credit'=>'3.00','department_id'=> '101', 'semester_id'=>'103'],
+                        ['title'=>'Chemistry (Sessional)', 'course_code'=> 'CHY 202', 'credit'=>'1.50','department_id'=> '101', 'semester_id'=>'103'],
+                        ['title'=>'Physics (Sessional)', 'course_code'=> 'PHY 102', 'credit'=>'3.00','department_id'=> '101', 'semester_id'=>'103'],
+                        ['title'=>'Mechanical Drawing', 'course_code'=> 'ME 101', 'credit'=>'1.50','department_id'=> '101', 'semester_id'=>'103']
                     ]
                 ],
                 [
                     'semester'=>4,
                     'courses'=> [
-                        ['id'=>1401, 'title'=>'Programming with c', 'code'=>'CSE 201', 'credit'=>'3.00'],
-                        ['id'=>1402, 'title'=>'Programming with c', 'code'=>'CSE 202', 'credit'=>'1.50'],
-                        ['id'=>1403, 'title'=>'Chemistry', 'code'=> 'CHY 201', 'credit'=>'3.00'],
-                        ['id'=>1404, 'title'=>'Chemistry (Sessional)', 'code'=> 'CHY 202', 'credit'=>'1.50'],
-                        ['id'=>1405, 'title'=>'Physics (Sessional)', 'code'=> 'PHY 102', 'credit'=>'3.00'],
-                        ['id'=>1406, 'title'=>'Mechanical Drawing', 'code'=> 'ME 101', 'credit'=>'1.50']
+                        ['title'=>'Programming with c', 'course_code'=>'CSE 201', 'credit'=>'3.00','department_id'=> '101', 'semester_id'=>'103'],
+                        ['title'=>'Programming with c', 'course_code'=>'CSE 202', 'credit'=>'1.50','department_id'=> '101', 'semester_id'=>'103'],
+                        ['title'=>'Chemistry', 'course_code'=> 'CHY 201', 'credit'=>'3.00','department_id'=> '101', 'semester_id'=>'103'],
+                        ['title'=>'Chemistry (Sessional)', 'course_code'=> 'CHY 202', 'credit'=>'1.50','department_id'=> '101', 'semester_id'=>'103'],
+                        ['title'=>'Physics (Sessional)', 'course_code'=> 'PHY 102', 'credit'=>'3.00','department_id'=> '101', 'semester_id'=>'103'],
+                        ['title'=>'Mechanical Drawing', 'course_code'=> 'ME 101', 'credit'=>'1.50','department_id'=> '101', 'semester_id'=>'103']
                     ]
                 ],
                 [
                     'semester'=>5,
                     'courses'=> [
-                        ['id'=>1501, 'title'=>'Programming with c', 'code'=>'CSE 201', 'credit'=>'3.00'],
-                        ['id'=>1502, 'title'=>'Programming with c', 'code'=>'CSE 202', 'credit'=>'1.50'],
-                        ['id'=>1503, 'title'=>'Chemistry', 'code'=> 'CHY 201', 'credit'=>'3.00'],
-                        ['id'=>1504, 'title'=>'Chemistry (Sessional)', 'code'=> 'CHY 202', 'credit'=>'1.50'],
-                        ['id'=>1505, 'title'=>'Physics (Sessional)', 'code'=> 'PHY 102', 'credit'=>'3.00'],
-                        ['id'=>1506, 'title'=>'Mechanical Drawing', 'code'=> 'ME 101', 'credit'=>'1.50']
+                        ['title'=>'Programming with c', 'course_code'=>'CSE 201', 'credit'=>'3.00','department_id'=> '101', 'semester_id'=>'104'],
+                        ['title'=>'Programming with c', 'course_code'=>'CSE 202', 'credit'=>'1.50','department_id'=> '101', 'semester_id'=>'104'],
+                        ['title'=>'Chemistry', 'course_code'=> 'CHY 201', 'credit'=>'3.00','department_id'=> '101', 'semester_id'=>'104'],
+                        ['title'=>'Chemistry (Sessional)', 'course_code'=> 'CHY 202', 'credit'=>'1.50','department_id'=> '101', 'semester_id'=>'104'],
+                        ['title'=>'Physics (Sessional)', 'course_code'=> 'PHY 102', 'credit'=>'3.00','department_id'=> '101', 'semester_id'=>'104'],
+                        ['title'=>'Mechanical Drawing', 'course_code'=> 'ME 101', 'credit'=>'1.50','department_id'=> '101', 'semester_id'=>'104']
                     ]
                 ],
                 [
                     'semester'=>6,
                     'courses'=> [
-                        ['id'=>1601, 'title'=>'Compiler Design', 'code'=>'CSE 601', 'credit'=>'3.00'],
-                        ['id'=>1602, 'title'=>'Compiler Design (Sessional)', 'code'=>'CSE 602', 'credit'=>'1.50'],
-                        ['id'=>1603, 'title'=>'Networking', 'code'=> 'CSE 603', 'credit'=>'3.00'],
-                        ['id'=>1604, 'title'=>'Networking (Sessional)', 'code'=> 'CSE 604', 'credit'=>'1.50'],
-                        ['id'=>1605, 'title'=>'Software Engineering', 'code'=> 'CSE 605', 'credit'=>'3.00'],
-                        ['id'=>1606, 'title'=>'software Engineering (Sessional)', 'code'=> 'CSE 606', 'credit'=>'1.50'],
-                        ['id'=>1607, 'title'=>'Concrete Mathmetics', 'code'=> 'CSE 607', 'credit'=>'1.50'],
-                        ['id'=>1608, 'title'=>'Numerical Methods', 'code'=> 'CSE 609', 'credit'=>'3.00'],
-                        ['id'=>1609, 'title'=>'Numerical Methods (Sessional)', 'code'=> 'CSE 609', 'credit'=>'3.00']
+                        ['title'=>'Compiler Design', 'course_code'=>'CSE 601', 'credit'=>'3.00','department_id'=> '101', 'semester_id'=>'105'],
+                        ['title'=>'Compiler Design (Sessional)', 'course_code'=>'CSE 602', 'credit'=>'1.50','department_id'=> '101', 'semester_id'=>'105'],
+                        ['title'=>'Networking', 'course_code'=> 'CSE 603', 'credit'=>'3.00','department_id'=> '101', 'semester_id'=>'105'],
+                        ['title'=>'Networking (Sessional)', 'course_code'=> 'CSE 604', 'credit'=>'1.50','department_id'=> '101', 'semester_id'=>'105'],
+                        ['title'=>'Software Engineering', 'course_code'=> 'CSE 605', 'credit'=>'3.00','department_id'=> '101', 'semester_id'=>'105'],
+                        ['title'=>'software Engineering (Sessional)', 'course_code'=> 'CSE 606', 'credit'=>'1.50','department_id'=> '101', 'semester_id'=>'105'],
+                        ['title'=>'Concrete Mathmetics', 'course_code'=> 'CSE 607', 'credit'=>'1.50','department_id'=> '101', 'semester_id'=>'105'],
+                        ['title'=>'Numerical Methods', 'course_code'=> 'CSE 609', 'credit'=>'3.00','department_id'=> '101', 'semester_id'=>'105'],
+                        ['title'=>'Numerical Methods (Sessional)', 'course_code'=> 'CSE 609', 'credit'=>'3.00','department_id'=> '101', 'semester_id'=>'105']
                     ]
                 ],
                 [
                     'semester'=>7,
                     'courses'=> [
-                        ['id'=>1701, 'title'=>'Programming with c', 'code'=>'CSE 201', 'credit'=>'3.00'],
-                        ['id'=>1702, 'title'=>'Programming with c', 'code'=>'CSE 202', 'credit'=>'1.50'],
-                        ['id'=>1703, 'title'=>'Chemistry', 'code'=> 'CHY 201', 'credit'=>'3.00'],
-                        ['id'=>1704, 'title'=>'Chemistry (Sessional)', 'code'=> 'CHY 202', 'credit'=>'1.50'],
-                        ['id'=>1705, 'title'=>'Physics (Sessional)', 'code'=> 'PHY 102', 'credit'=>'3.00'],
-                        ['id'=>1706, 'title'=>'Mechanical Drawing', 'code'=> 'ME 101', 'credit'=>'1.50']
+                        ['title'=>'Programming with c', 'course_code'=>'CSE 201', 'credit'=>'3.00','department_id'=> '101', 'semester_id'=>'106'],
+                        ['title'=>'Programming with c', 'course_code'=>'CSE 202', 'credit'=>'1.50','department_id'=> '101', 'semester_id'=>'106'],
+                        ['title'=>'Chemistry', 'course_code'=> 'CHY 201', 'credit'=>'3.00','department_id'=> '101', 'semester_id'=>'106'],
+                        ['title'=>'Chemistry (Sessional)', 'course_code'=> 'CHY 202', 'credit'=>'1.50','department_id'=> '101', 'semester_id'=>'106'],
+                        ['title'=>'Physics (Sessional)', 'course_code'=> 'PHY 102', 'credit'=>'3.00','department_id'=> '101', 'semester_id'=>'106'],
+                        ['title'=>'Mechanical Drawing', 'course_code'=> 'ME 101', 'credit'=>'1.50','department_id'=> '101', 'semester_id'=>'106']
                     ]
                 ],
                 [
                     'semester'=>8,
                     'courses'=> [
-                        ['id'=>1801, 'title'=>'Programming with c', 'code'=>'CSE 201', 'credit'=>'3.00'],
-                        ['id'=>1802, 'title'=>'Programming with c', 'code'=>'CSE 202', 'credit'=>'1.50'],
-                        ['id'=>1803, 'title'=>'Chemistry', 'code'=> 'CHY 201', 'credit'=>'3.00'],
-                        ['id'=>1804, 'title'=>'Chemistry (Sessional)', 'code'=> 'CHY 202', 'credit'=>'1.50'],
-                        ['id'=>1805, 'title'=>'Physics (Sessional)', 'code'=> 'PHY 102', 'credit'=>'3.00'],
-                        ['id'=>1806, 'title'=>'Mechanical Drawing', 'code'=> 'ME 101', 'credit'=>'1.50']
+                        ['title'=>'Programming with c', 'course_code'=>'CSE 201', 'credit'=>'3.00','department_id'=> '101', 'semester_id'=>'108'],
+                        ['title'=>'Programming with c', 'course_code'=>'CSE 202', 'credit'=>'1.50','department_id'=> '101', 'semester_id'=>'108'],
+                        ['title'=>'Chemistry', 'course_code'=> 'CHY 201', 'credit'=>'3.00','department_id'=> '101', 'semester_id'=>'108'],
+                        ['title'=>'Chemistry (Sessional)', 'course_code'=> 'CHY 202', 'credit'=>'1.50','department_id'=> '101', 'semester_id'=>'108'],
+                        ['title'=>'Physics (Sessional)', 'course_code'=> 'PHY 102', 'credit'=>'3.00','department_id'=> '101', 'semester_id'=>'108'],
+                        ['title'=>'Mechanical Drawing', 'course_code'=> 'ME 101', 'credit'=>'1.50','department_id'=> '101', 'semester_id'=>'108']
                     ]
                 ],
             ];
@@ -108,14 +107,13 @@ class CoursesTableSeeder extends Seeder
             
             foreach($semester['courses'] as $course){
                 $cor = Course::create([
-                    'id'=>$course['id'],
                     'title'=>$course['title'],
-                    'code'=>$course['code'],
-                    'credit'=>$course['credit']
+                    'course_code'=>$course['course_code'],
+                    'credit'=>$course['credit'],
+                    'department_id'=> $course['department_id'],
+                    'semester_id'=> $course['semester_id'],
                 ]);
-                $cor->semesters()->attach($sem);
             }
-            $sem = $sem + 1;
         }
 
     }

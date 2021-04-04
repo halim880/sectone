@@ -4,6 +4,7 @@
 @section('content')
     <div class="container">
         <form action="{{URL::to('student/form/submit')}}" method="post" enctype="multipart/form-data" id="semester_form">
+            @csrf
             <div class="card" style="padding: 15px;">
                 <div class="row center-align orange">
                     <h4>Semester Final Form</h4>
@@ -15,17 +16,17 @@
                             <label for="name">Name</label>
                         </div>
                         <div class="input-field col m6">
-                            <input type="text" name="name" id="name" value="{{Auth::user()->student->id}}">
+                            <input type="text" name="student_id" id="name" value="{{Auth::user()->student->id}}">
                             <label for="name">Registration</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col m6">
-                            <input type="text" name="name" id="department" value="{{Auth::user()->student->department->name}}">
+                            <input type="text" name="department_id" id="department" value="{{Auth::user()->student->department->name}}">
                             <label for="department">Department</label>
                         </div>
                         <div class="input-field col m6">
-                            <input type="text" name="name" id="name" value="{{Auth::user()->student->semester->name}}">
+                            <input type="text" name="name" id="name" value="{{Auth::user()->student->semester_name}}">
                             <label for="name">Semester</label>
                         </div>
                     </div>
@@ -80,10 +81,35 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                   @foreach (Auth::user()->student->courses as $course)
+                                   @foreach ($current_courses as $course)
                                     <tr>
                                         <td>{{$course->title}}</td>
-                                        <td>{{$course->code}}</td>
+                                        <td>{{$course->course_code}}</td>
+                                        <td>{{$course->credit}}</td>
+                                    </tr>
+                                   @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col m3 title">
+                            <h4>Drop Courses</h4>
+                        </div>
+                        <div class="col m8">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Course Title</th>
+                                        <th>Code</th>
+                                        <th>Credit</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                   @foreach ($drop_courses as $course)
+                                    <tr>
+                                        <td>{{$course->title}}</td>
+                                        <td>{{$course->course_code}}</td>
                                         <td>{{$course->credit}}</td>
                                     </tr>
                                    @endforeach
@@ -92,10 +118,9 @@
                         </div>
                     </div>
                     <div class="row center-align">
-                        <button class="btn orange" onclick="submit('')">Submit</button>
+                        <button class="btn orange" onclick="submit()">Submit</button>
                     </div>
                 </div>
-                
             </div>
         </form>
 
