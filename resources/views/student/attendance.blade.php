@@ -147,9 +147,15 @@
                 let date = document.getElementById('attendance_date');
                 let course = document.getElementById('attendance_course');
 
+                let base_url = "http://127.0.0.1:8000/api";
+                let api_endpoint = "/attendance/get_attendance";
+                let date = "/13.12.23";
+                let course_id = "1601"
+
+                let url = base_url + api_endpoint + course_id + date;
                 
 
-                fetch('http://127.0.0.1:8000/api/student/attendance/show', {
+                fetch(url, {
                     method: "POST",
                     body: JSON.stringify(data),
                     headers: {
@@ -161,6 +167,7 @@
                     body.innerHTML = '';
                     date.innerHTML = 'Date : '+ json[0].date;
                     course.innerHTML = e.children[1].innerHTML;
+
                     json.forEach(att => {
                         div = document.createElement('div');
                         btn = document.createElement('button');

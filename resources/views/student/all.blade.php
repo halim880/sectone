@@ -26,8 +26,8 @@
 
         <div class="date_div">
             @foreach ($attendance as $date => $data)
-                <div class="date" onclick="show_attendance(this, {{$data}})">
-                    <h3> {{$date}}</h3>
+                <div class="date" onclick="show_attendance(this)">
+                    <p> {{$date}}</p>
                 </div>
             @endforeach
         </div>
@@ -148,7 +148,10 @@
 
         </div>
         <script>
-        function show_attendance(e, data){
+        async function show_attendance(e){
+            let data = await fetch('http://127.0.0.1:8000/api/attendance/get_attendance/1601/13.12.23')
+                            .then(res => res.json());
+
             const divs = e.parentElement.children;
             for (let i = 0; i < divs.length; i++) {
                 divs[i].classList.remove('active');

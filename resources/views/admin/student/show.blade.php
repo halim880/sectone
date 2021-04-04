@@ -69,7 +69,7 @@
                      <tr>
                          <td>Blood group</td>
                          <td>:</td>
-                         <td>{{$student->blood_group}}</td>
+                         <td>A+</td>
                      </tr>
                  </table>
                  </div>
@@ -78,31 +78,6 @@
                 <div class="info">
                  <div>
                      <p>Contact information</p>
-                 </div>
-                 <table class="striped">
-                     <tr>
-                         <td>Phone</td>
-                         <td>:</td>
-                         <td>{{$student->phone}}</td>
-                     </tr>
-                     
-                     <tr>
-                         <td>Email</td>
-                         <td>:</td>
-                         <td>{{$student->email}}</td>
-                     </tr>
-                     <tr>
-                         <td>Permanent Address</td>
-                         <td>:</td>
-                         <td>{{$student->permanent_address}}</td>
-                     </tr>
-                 </table>
-                 </div>
-             </div>
-             <div class="col s12 m6">
-                <div class="info">
-                 <div>
-                     <p>Payment History</p>
                  </div>
                  <table class="striped">
                      <tr>

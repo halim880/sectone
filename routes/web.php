@@ -81,3 +81,4 @@ Route::get('test', function(){
 });
 
 
+Route::get('/attendance/take_attendance', "Attendance\AttendanceController@show");
