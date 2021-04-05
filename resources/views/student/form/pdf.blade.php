@@ -1,165 +1,121 @@
-@extends('layouts.student')
-@section('content')
-
-<div class="container">
-    <div class="card">
-        <div class="row center-align card-header">
-            <h4 style="padding-top: 20px;">Student Form</h4>
-        </div>
-        <div class="row">
-            <div class="col s12 m4">
-                <div class="book-card card z-depth-0">
-                    <img src="{{asset('image/form/image/'.$form->image)}}" alt="" height="150" width="150">
-                    <div class="center-align">
-                        <h5>{{$student->name}}</h5>
-                    </div>  
-                    <img src="{{asset('image/form/sign/'.$form->sign)}}" alt="" height="50" width="150">
-                </div>
-            </div>
-            <div class="col s12 m7">
-                <div class="info">
-                    <div>
-                        <p>Academic info. </p>
-                    </div>
-                    <table class="striped">
-                        <tr>
-                            <td>Student id</td>
-                            <td>:</td>
-                            <td>{{$student->id}}</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Department</td>
-                            <td>:</td>
-                            <td>{{$student->department->name}}</td>
-                        </tr>
-                        <tr>
-                            <td>Semester</td>
-                            <td>:</td>
-                            <td>{{$student->semester->name}}</td>
-                        </tr>
-                        <tr>
-                            <td>Semester</td>
-                            <td>:</td>
-                            <td>{{$student->session}}</td>
-                        </tr>
-                    </table>
-                </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table td{
+            padding: 3px;
+        }
+        h4{
+            margin-top: 8px;
+            margin-bottom: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div style="background: green; color:white;">
+        <h3 align="center" style="padding: 10px">Registration Form</h3>
+    </div>
+    <div>
+        <div>
+            <div align="center">
+                <img src="{{public_path('image/form/image/'. $form->image)}}" alt="" height="150" width="150">
             </div>
             
-            
+            <h4>Academic Info.</h4>
+            <div>
+                <table class="striped">
+                    <tr>
+                        <td>Name</td>
+                        <td>:</td>
+                        <td>{{$student->name}}</td>
+                    </tr>
+                    <tr>
+                        <td>Registration No.</td>
+                        <td>:</td>
+                        <td>{{$student->id}}</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Department</td>
+                        <td>:</td>
+                        <td>{{$student->department->name}}</td>
+                    </tr>
+                    <tr>
+                        <td>Semester</td>
+                        <td>:</td>
+                        <td>{{$student->semester->name}}</td>
+                    </tr>
+                    <tr>
+                        <td>Session</td>
+                        <td>:</td>
+                        <td>{{$student->session}}</td>
+                    </tr>
+                </table>
+            </div>
         </div>
-        <div class="row">
-            <div class="col s10 m5">
-                <div class="info">
-                 <div>
-                     <p>Personal information</p>
-                 </div>
-                 <table class="striped">
-                     <tr>
-                         <td>Father's Name</td>
-                         <td>:</td>
-                         <td>{{$student->father_name}}</td>
-                     </tr>
-                     
-                     <tr>
-                         <td>Mother's Name</td>
-                         <td>:</td>
-                         <td>{{$student->mother_name}}</td>
-                     </tr>
-                     <tr>
-                         <td>Blood group</td>
-                         <td>:</td>
-                         <td>A+</td>
-                     </tr>
-                 </table>
-                 </div>
-             </div>
-             <div class="col s12 m6">
-                <div class="info">
-                 <div>
-                     <p>Contact information</p>
-                 </div>
-                 <table class="striped">
-                     <tr>
-                         <td>Phone</td>
-                         <td>:</td>
-                         <td>{{$student->phone}}</td>
-                     </tr>
-                     
-                     <tr>
-                         <td>Email</td>
-                         <td>:</td>
-                         <td>{{$student->email}}</td>
-                     </tr>
-                     <tr>
-                         <td>Permanent Address</td>
-                         <td>:</td>
-                         <td>{{$student->permanent_address}}</td>
-                     </tr>
-                 </table>
-                 </div>
-             </div>
+        <div>
+            <h4>Personal Info.</h4>
+        <div>
+            <table>
+                <tr>
+                    <td>Father's Name</td>
+                    <td>:</td>
+                    <td>{{$student->father_name}}</td>
+                </tr>
+                
+                <tr>
+                    <td>Mother's Name</td>
+                    <td>:</td>
+                    <td>{{$student->mother_name}}</td>
+                </tr>
+                <tr>
+                    <td>Blood group</td>
+                    <td>:</td>
+                    <td>A+</td>
+                </tr>
+            </table>
+        </div>
+        <h4>Contact Info.</h4>
+        <div>
+            <table>
+                <tr>
+                    <td>Phone</td>
+                    <td>:</td>
+                    <td>{{$student->phone}}</td>
+                </tr>
+                
+                <tr>
+                    <td>Email</td>
+                    <td>:</td>
+                    <td>{{$student->email}}</td>
+                </tr>
+                <tr>
+                    <td>Permanent Address</td>
+                    <td>:</td>
+                    <td>{{$student->permanent_address}}</td>
+                </tr>
+            </table>
+        </div>
         </div>
 
-        <div class="card-action center-align">
-            <form action="" method="post" style="display:inline;">
-                @csrf
-                @method("DELETE")
-                <button class="btn orange">Download Form</button>
-            </form>
+        <h4>Current Courses</h4>
+        <table class="table"  border="1" style="border-collapse: collapse">
+            @foreach ($current_courses as $course)
+                <tr>
+                    <td style="padding: 5px 10px 5px 10px">{{$course->title}}</td>
+                    <td style="padding: 5px 10px 5px 10px">{{$course->course_code}}</td>
+                    <td style="padding: 5px 10px 5px 10px">{{$course->credit}}</td>
+                </tr>
+            @endforeach
+        </table>
+        <div>
+            <h4>Signature</h4>
+            <img src="{{public_path('image/form/sign/'. $form->sign)}}" alt="" height="50" width="150">
         </div>
-</div>
-</div>
-
-
-
-
-@endsection
-
-
-<style scoped>
-    table {
-        display: inline-block;
-        margin: 10px;
-        width: 100% !important;
-    }
-    table td{
-        padding:10px !important;
-    }
-    .book-card{
-        width: 100%;
-        /* padding: 10px; */
-        margin-top: 10px !important;
-        margin-left: 20px !important;
-    }
-    .book-description{
-        max-height: 250px;
-        overflow: auto;
-        margin: 10px;
-        border: 1px solid rgb(223, 245, 252);
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-bottom: 20px;
-        color: rgb(16, 70, 70);
-    }
-    .book-location{
-        width: 200px;
-        color: blueviolet;
-    }
-    .card-header::after{
-        position: absolute;
-        left: 50%;
-        right: 50%;
-        transform: translate(-50%, -50%);
-        content: '';
-        align-items: center;
-        display: block;
-        height: 2px;
-        width: 200px;
-        background: teal;
-    }
-    .info{
-        padding: 10px;
-    }
-</style>
+    </div>
+</body>
+</html>

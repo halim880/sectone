@@ -76,7 +76,8 @@ Route::namespace('Student')->prefix('student')->middleware(IsStudent::class)->gr
      
      Route::get('/form/create', 'RegistrationFormController@create_form');
      Route::post('/form/submit', 'RegistrationFormController@submit');
-     Route::get('/form/pdf', 'RegistrationFormController@student_form_pdf');
+     Route::get('/form/submitable', 'RegistrationFormController@submitable');
+     Route::get('/form/pdf', 'RegistrationFormController@createPDF');
 });
 
 

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Academic\Course;
 use App\Models\Student;
 use App\Models\Student\RegistrationForm;
+use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -26,7 +27,7 @@ class RegistrationFormController extends Controller
             $drop_courses = $student->drop_courses;
             return view('student.create_form', compact(['student']));
         }
-        else return redirect('student/form/pdf');
+        else return redirect('student/form/submitable');
     }
 
     public function submit(Request $data){
@@ -52,23 +53,33 @@ class RegistrationFormController extends Controller
         $form->image = $img_name;
         $form->sign = $sign_name;
 
-        $current_courses = $student->current_courses();
-
         $form->save();
 
         // $form->courses()->attach($current_courses);
 
-        return redirect('student/form/pdf');
+        return redirect('student/form/submitable');
     }
 
-    public function student_form_pdf(){
+    public function submitable(){
         $student = Auth::user()->student;
         $form = $student->submited_form();
-        return view('student.form.pdf', compact(['student', 'form']));
+        return view('student.form.form', compact(['student', 'form']));
     }
 
     public function drop_courses($student_id){
         $student = Student::where('id', $student_id)->first();
         return response()->json($student->drop_courses);
     }
+
+    public function createPDF() {
+
+        $student = Auth::user()->student;
+        $form = $student->submited_form();
+        $current_courses = $student->current_courses();
+
+        $pdf = PDF::loadView('student.form.pdf', compact(['student', 'form', 'current_courses']));
+  
+        // download PDF file with download method
+        return $pdf->download('pdf_file.pdf');
+      }
 }
