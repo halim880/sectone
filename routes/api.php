@@ -31,3 +31,7 @@ Route::post('attendance/update', 'Teacher\AttendanceController@update');
 Route::post('attendance/today', 'Teacher\TeachersController@todaysAttendance');
 
 Route::post('/student/attendance/show', 'Student\StudentsController@show');
+
+Route::get('/student/form/drop_courses/{student_id}', 'Student\RegistrationFormController@drop_courses');
+
+Route::post('/student/form/submit', 'Student\RegistrationFormController@submit');

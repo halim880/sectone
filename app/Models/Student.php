@@ -10,6 +10,7 @@ use App\Models\Academic\Course;
 use App\Models\Academic\DropCourse;
 use App\Models\Library\Member as L_Member;
 use App\Models\Library\IssueBook as Book;
+use App\Models\Student\RegistrationForm;
 use Illuminate\Database\Eloquent\Model;
 
 use App\Traits\UserInfo;
@@ -62,6 +63,20 @@ class Student extends Model
 
     public function getSemesterNameAttribute(){
         return $this->semester->name;
+    }
+
+
+    public function submited_form(){
+        $form = RegistrationForm::where([
+            'student_id'=> $this->id,
+            'semester_id'=> $this->semester_id,
+            'department_id'=> $this->department_id,
+        ])->first();
+
+        if ($form==null) {
+            return null;
+        }
+        else return $form;
     }
 
 }

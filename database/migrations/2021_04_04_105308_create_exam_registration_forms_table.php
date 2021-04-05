@@ -18,6 +18,9 @@ class CreateExamRegistrationFormsTable extends Migration
             $table->unsignedBigInteger('student_id');
             $table->unsignedBigInteger('semester_id');
             $table->unsignedBigInteger('department_id');
+            $table->string('image');
+            $table->string('sign');
+            $table->string('transaction_id')->nullable();
             $table->boolean('isAccepted')->default(false);
             $table->timestamps();
         });
