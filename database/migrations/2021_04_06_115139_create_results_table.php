@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateExamRegistrationFormsTable extends Migration
+class CreateResultsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,15 @@ class CreateExamRegistrationFormsTable extends Migration
      */
     public function up()
     {
-        Schema::create('exam_registration_forms', function (Blueprint $table) {
+        Schema::create('results', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('student_id');
-            $table->unsignedBigInteger('semester_id');
             $table->unsignedBigInteger('department_id');
-            $table->string('image');
-            $table->string('sign');
-            $table->string('payment_id')->nullable();
+            $table->unsignedBigInteger('semester_id');
+            $table->unsignedBigInteger('course_id');
+            $table->string('grade');
+            $table->double('point');
+            $table->string('status');
             $table->timestamps();
         });
     }
@@ -32,6 +33,6 @@ class CreateExamRegistrationFormsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('exam_registration_forms');
+        Schema::dropIfExists('results');
     }
 }

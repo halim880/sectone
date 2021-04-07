@@ -1,42 +1,30 @@
 @extends('layouts.student')
 
 @section('content')
-    <div class="container mt-3">
-        <div class="row">
-            <div class="col-md-10">
-                <div class="card w-100">
-                    
-                    <div class="card-body">
-                        <div class="card-title text-center">
-                            <h4>Borrowed Books</h4>
-                        </div>
-                        <table class="table">
-                            <thead>
-                                <tr class="row">
-                                    <td class="col">Book Id</td>
-                                    <td class="col-3">Title</td>
-                                    <td class="col">Author</td>
-                                    <td class="col">Issue Date</td>
-                                    <td class="col">Return Date</td>
-                                    <td class="col">status</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach (Auth::user()->student->books as $book)
-                                    <tr class="row">
-                                        <td class="col">{{$book->id}}</td>
-                                        <td class="col-3">{{$book->book_title}}</td>
-                                        <td class="col">{{$book->book->author}}</td>
-                                        <td class="col">{{$book->issue_date}}</td>
-                                        <td class="col">{{$book->return_date}}</td>
-                                        <td class="col">{{$book->status}}</td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div style="max-width: 750px; padding:20px; margin:20px; background: white">
+        <table class="striped grey" style="border-collapse: collapse">
+            <thead class="green">
+                <tr>
+                    <td>Book Id</td>
+                    <td>Title</td>
+                    <td>Author</td>
+                    <td>Issue Date</td>
+                    <td>Return Date</td>
+                    <td>status</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Auth::user()->student->books as $book)
+                    <tr>
+                        <td>{{$book->id}}</td>
+                        <td>{{$book->book_title}}</td>
+                        <td>{{$book->book->author}}</td>
+                        <td>{{$book->issue_date}}</td>
+                        <td>{{$book->return_date}}</td>
+                        <td>{{$book->status}}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
     </div>
 @endsection

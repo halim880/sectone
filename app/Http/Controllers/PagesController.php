@@ -1,14 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\User;
-use App\Models\Member;
 use App\Models\Event;
 use App\Models\Academic\Notice;
-use App\Models\Advisor;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\Request;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class PagesController extends Controller
 {

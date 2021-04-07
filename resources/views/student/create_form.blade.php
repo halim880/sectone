@@ -15,7 +15,7 @@
                     <form action="{{URL::to('student/form/submit')}}" method="post" id="registration_form" enctype="multipart/form-data">
                         @csrf
                         <div>
-                            <label for="registration_number">Student ID No.:</label>
+                            <label for="registration_number">Registration No.:</label>
                             <input type="text" value="{{$student->id}}">
                         </div>
                         <div>
@@ -85,6 +85,9 @@
     // async function submit(e) {
     //     document.getElementById('registration_form').submit;
     // }
+
+
+    
 </script>
 
 <style>

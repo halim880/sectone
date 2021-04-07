@@ -4,10 +4,9 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Models\Member;
 use App\Models\Event;
-use App\Models\Advisor;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\Request;
-use DB;
+use Illuminate\Support\Facades\DB;
+
 
 class HomeController extends Controller
 {
@@ -34,10 +33,5 @@ class HomeController extends Controller
     public function events(){
         $events = Event::all();
         return view('pages.events', compact('events'));
-    }
-
-    public function advisors(){
-        $advisors = Advisor::all();
-        return view('pages.advisors', compact('advisors'));
     }
 }

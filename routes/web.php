@@ -72,6 +72,16 @@ Route::namespace('Student')->prefix('student')->middleware(IsStudent::class)->gr
      Route::get('/form/submit', 'StudentsController@form_submit');
      Route::get('/form/check', 'StudentsController@check');
      Route::get('/library/books', 'StudentsController@books');
+
+
+
+     Route::get('/hostel', 'StudentsController@hostel');
+
+
+     Route::get('/results', 'ResultsController@index');
+     Route::get('/result/single-result/{department_id}/{semester_id}', 'ResultsController@show');
+     Route::get('/result/apply-for-review/{student}', 'ResultsController@apply_for_review');
+     Route::get('/result/pdf/{department_id}/{semester_id}', 'ResultsController@createPDF');
      
      
      Route::get('/form/create', 'RegistrationFormController@create_form');
@@ -87,3 +97,18 @@ Route::get('test', function(){
 
 
 Route::get('/attendance/take_attendance', "Attendance\AttendanceController@show");
+
+
+// SSLCOMMERZ Start
+Route::get('/example1', 'SslCommerzPaymentController@exampleEasyCheckout');
+Route::get('/example2', 'SslCommerzPaymentController@exampleHostedCheckout');
+
+Route::post('/pay', 'SslCommerzPaymentController@index');
+Route::post('/pay-via-ajax', 'SslCommerzPaymentController@payViaAjax');
+
+Route::post('/success', 'SslCommerzPaymentController@success');
+Route::post('/fail', 'SslCommerzPaymentController@fail');
+Route::post('/cancel', 'SslCommerzPaymentController@cancel');
+
+Route::post('/ipn', 'SslCommerzPaymentController@ipn');
+//SSLCOMMERZ END

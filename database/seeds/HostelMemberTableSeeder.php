@@ -13,6 +13,7 @@ class HostelMemberTableSeeder extends Seeder
     {
         Member::truncate();
         $members = [
+            ['student_id'=>'2016331501', 'hostel'=>'2', 'room_no'=>'202', 'sit_no'=>'122071', 'admission_date'=>'12/01/2017', 'payment_id'=>'111111'],
             ['student_id'=>'2016331509', 'hostel'=>'2', 'room_no'=>'207', 'sit_no'=>'122071', 'admission_date'=>'12/01/2017', 'payment_id'=>'111111'],
             ['student_id'=>'2016331510', 'hostel'=>'2', 'room_no'=>'207', 'sit_no'=>'122071', 'admission_date'=>'12/01/2017', 'payment_id'=>'111112'],
             ['student_id'=>'2016331511', 'hostel'=>'2', 'room_no'=>'207', 'sit_no'=>'122071', 'admission_date'=>'12/01/2017', 'payment_id'=>'111113'],

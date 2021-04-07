@@ -48,7 +48,6 @@ class RegistrationFormController extends Controller
         $form->student_id = $student->id;
         $form->department_id = $student->department_id;
         $form->semester_id = $student->semester_id;
-        $form->isAccepted = false;
 
         $form->image = $img_name;
         $form->sign = $sign_name;

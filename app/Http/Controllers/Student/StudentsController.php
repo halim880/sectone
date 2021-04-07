@@ -10,6 +10,7 @@ use App\Models\Library\IssueBook as Issue;
 use App\Models\Student;
 use App\Models\Department;
 use App\Models\Attendance;
+use App\Models\HostelMember;
 use Illuminate\Support\Facades\Auth;
 class StudentsController extends Controller
 {
@@ -47,5 +48,10 @@ class StudentsController extends Controller
 
     public function books(){
         return view('student.books');
+    }
+
+    public function hostel(){
+        $hostel = HostelMember::where('student_id', auth()->user()->student->id)->first();
+        return view('student.hostel.home', compact('hostel'));
     }
 }

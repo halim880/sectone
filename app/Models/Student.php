@@ -65,6 +65,10 @@ class Student extends Model
         return $this->semester->name;
     }
 
+    public function getDepartmentNameAttribute(){
+        return $this->department->name;
+    }
+
 
     public function submited_form(){
         $form = RegistrationForm::where([

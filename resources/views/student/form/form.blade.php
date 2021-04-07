@@ -105,6 +105,7 @@
         <div class="card-action center-align">
             
                 <a href="{{url('student/form/pdf')}}" class="btn orange">Download Form</a>
+                <a href="{{url('/example1')}}" class="btn">pay now</a>
 
         </div>
 </div>
